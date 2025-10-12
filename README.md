@@ -62,11 +62,35 @@ Prerequisities: Python >= 3.5
 ```shell
 git clone https://github.com/dbt-labs/jaffle_shop_duckdb.git
 cd jaffle_shop_duckdb
-python3 -m venv venv
-source venv/bin/activate
-python3 -m pip install --upgrade pip
-python3 -m pip install -r requirements.txt
-source venv/bin/activate
+curl -LsSf https://astral.sh/uv/install.sh | sh
+source $HOME/.local/bin/env
+uv sync
+source .venv/bin/activate
+dbt build
+dbt docs generate
+dbt docs serve
+```
+</details>
+
+<details>
+<summary>GitHub Codespaces</summary>
+
+This project is configured with a devcontainer that automatically installs `uv` and all dependencies.
+
+```shell
+# Dependencies are already installed via the devcontainer
+# Just activate the virtual environment and run dbt
+source .venv/bin/activate
+dbt build
+dbt docs generate
+dbt docs serve
+```
+
+Or if you need to reinstall dependencies:
+
+```shell
+uv sync
+source .venv/bin/activate
 dbt build
 dbt docs generate
 dbt docs serve

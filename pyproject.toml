@@ -1,0 +1,27 @@
+[project]
+name = "jaffle-shop-duckdb"
+version = "0.1.0"
+description = "Testing dbt project with DuckDB"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+
+dependencies = [
+    "duckcli>=0.2.1",
+    "dbt-duckdb>=1.9.0,<2.0.0",
+    "dbt-core>=1.9.0,<1.10.0",
+    "sqlfluff>=2.3.5,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pip-tools",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "pip-tools",
+]
+
+# This is a dbt project, not a Python package to be built/installed
+package = false
