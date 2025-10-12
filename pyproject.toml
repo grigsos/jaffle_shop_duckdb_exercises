@@ -13,15 +13,11 @@ dependencies = [
     "sqlfluff>=2.3.5,<3",
 ]
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
     "pip-tools",
 ]
 
-[tool.uv]
-dev-dependencies = [
-    "pip-tools",
-]
-
 # This is a dbt project, not a Python package to be built/installed
+[tool.uv]
 package = false

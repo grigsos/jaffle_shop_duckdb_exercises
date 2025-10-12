@@ -541,11 +541,6 @@ dependencies = [
     { name = "sqlfluff" },
 ]
 
-[package.optional-dependencies]
-dev = [
-    { name = "pip-tools" },
-]
-
 [package.dev-dependencies]
 dev = [
     { name = "pip-tools" },
@@ -556,10 +551,8 @@ requires-dist = [
     { name = "dbt-core", specifier = ">=1.9.0,<1.10.0" },
     { name = "dbt-duckdb", specifier = ">=1.9.0,<2.0.0" },
     { name = "duckcli", specifier = ">=0.2.1" },
-    { name = "pip-tools", marker = "extra == 'dev'" },
     { name = "sqlfluff", specifier = ">=2.3.5,<3" },
 ]
-provides-extras = ["dev"]
 
 [package.metadata.requires-dev]
 dev = [{ name = "pip-tools" }]
